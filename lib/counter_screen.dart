@@ -18,6 +18,7 @@ class _CounterScreenState extends State<CounterScreen> {
             onPressed: () {},
             child: Icon(Icons.add),
           ),
+          SizedBox(height: 20),
           FloatingActionButton(
             onPressed: () {},
             child: Icon(Icons.remove),
