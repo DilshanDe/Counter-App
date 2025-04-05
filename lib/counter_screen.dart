@@ -17,6 +17,10 @@ class _CounterScreenState extends State<CounterScreen> {
           FloatingActionButton(
             onPressed: () {},
             child: Icon(Icons.add),
+          ),
+          FloatingActionButton(
+            onPressed: () {},
+            child: Icon(Icons.remove),
           )
         ],
       ),
