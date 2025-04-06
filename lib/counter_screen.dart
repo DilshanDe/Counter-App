@@ -1,4 +1,8 @@
+import 'package:counter_app/bloc/counter_bloc.dart';
+import 'package:counter_app/bloc/counter_event.dart';
+import 'package:counter_app/bloc/counter_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CounterScreen extends StatefulWidget {
   const CounterScreen({super.key});
@@ -15,7 +19,9 @@ class _CounterScreenState extends State<CounterScreen> {
         mainAxisSize: MainAxisSize.min,
         children: [
           FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              context.read<CounterBloc>().add(IncrementEvent());
+            },
             child: Icon(Icons.add),
           ),
           SizedBox(height: 20),
@@ -28,7 +34,10 @@ class _CounterScreenState extends State<CounterScreen> {
       appBar: AppBar(
         title: Text("Counter App"),
       ),
-      body: Center(child: Text("Counter Value:0")),
+      body: Center(child:
+          BlocBuilder<CounterBloc, CounterState>(builder: (context, state) {
+        return Text("Counter Value:${state.count}");
+      })),
     );
   }
 }
