@@ -28,7 +28,7 @@ class _CounterScreenState extends State<CounterScreen> {
       appBar: AppBar(
         title: Text("Counter App"),
       ),
-      body: Center(child: Text("Counter Value")),
+      body: Center(child: Text("Counter Value:0")),
     );
   }
 }
