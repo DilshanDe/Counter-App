@@ -26,7 +26,9 @@ class _CounterScreenState extends State<CounterScreen> {
           ),
           SizedBox(height: 20),
           FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              context.read<CounterBloc>().add(DecrementEvent());
+            },
             child: Icon(Icons.remove),
           )
         ],
@@ -36,7 +38,10 @@ class _CounterScreenState extends State<CounterScreen> {
       ),
       body: Center(child:
           BlocBuilder<CounterBloc, CounterState>(builder: (context, state) {
-        return Text("Counter Value:${state.count}");
+        return Text(
+          "Counter Value:${state.count}",
+          style: TextStyle(fontSize: 30),
+        );
       })),
     );
   }
